@@ -1,0 +1,14 @@
+username cisco password 0 cisco
+!
+line vty 0 4
+ password cisco
+ login local
+ transport input all
+!
+inter vlan1
+ip address 192.168.5.206 255.255.255.0
+no sh
+exit
+ip default-gateway 192.168.5.254
+do ping 192.168.5.254
+do wr
